@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Optimización de Rutas</title>
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+
+    <!-- Nuestro CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Optimización de Rutas</h1>
+    </header>
+
+    <!-- TABS -->
+    <div class="tabs">
+        <button class="tab active" onclick="openTab('tab-dijkstra')">Dijkstra</button>
+        <button class="tab" onclick="openTab('tab-mst')">MST</button>
+        <button class="tab" onclick="openTab('tab-cc')">Conexas</button>
+    </div>
+
+    <main>
+
+        <!-- TAB DIJKSTRA -->
+        <section id="tab-dijkstra" class="tab-content active">
+
+            <h2>Ruta Más Corta</h2>
+
+            <div class="input-group">
+                <label>Hospital Origen:</label>
+                <input id="origen" placeholder="PER-INMP">
+
+                <label>Hospital Destino:</label>
+                <input id="destino" placeholder="PER-INEN">
+
+                <button onclick="runDijkstra()">Calcular</button>
+            </div>
+
+            <pre id="resultado-dijkstra" class="result-box"></pre>
+        </section>
+
+        <!-- TAB MST -->
+        <section id="tab-mst" class="tab-content">
+
+            <h2>Árbol de Expansión Mínima (MST)</h2>
+
+            <button onclick="runMST()">Generar MST</button>
+
+            <pre id="resultado-mst" class="result-box"></pre>
+        </section>
+
+        <!-- TAB COMPONENTES CONEXAS -->
+        <section id="tab-cc" class="tab-content">
+
+            <h2>Componentes Conexas</h2>
+
+            <button onclick="runConnectedComponents()">Generar Componentes</button>
+
+            <pre id="resultado-cc" class="result-box"></pre>
+        </section>
+
+        <!-- MAPA -->
+        <div id="map"></div>
+
+    </main>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+
+    <script>
+        // Cambiar tabs
+        function openTab(id) {
+            document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+            document.querySelectorAll(".tab-content").forEach(s => s.classList.remove("active"));
+            event.target.classList.add("active");
+            document.getElementById(id).classList.add("active");
+        }
+    </script>
+</body>
+</html>

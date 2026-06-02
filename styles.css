@@ -1,0 +1,126 @@
+/* ===== GENERAL ===== */
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #0e0e0e;
+    color: #e6e6e6;
+}
+
+header {
+    background: #141414;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 20px #000;
+}
+
+h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #00ffd5;
+}
+
+main {
+    padding: 20px;
+}
+
+/* ===== TABS ===== */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background: #121212;
+    padding: 10px;
+}
+
+.tab {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    background: #1f1f1f;
+    color: #bbb;
+    transition: 0.2s;
+}
+
+.tab:hover {
+    background: #333;
+}
+
+.tab.active {
+    background: linear-gradient(45deg, #00ffc3, #008cff);
+    color: #000;
+    font-weight: bold;
+}
+
+/* ===== SECCIONES ===== */
+.tab-content {
+    display: none;
+    padding: 20px;
+    border-radius: 12px;
+    background: #111;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px #000;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+h2 {
+    color: #00ffd5;
+}
+
+/* ===== INPUTS ===== */
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+input {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: #1b1b1b;
+    color: #fff;
+    width: 150px;
+}
+
+button {
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #00ffc3, #00a6ff);
+    color: #000;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* ===== RESULTADOS ===== */
+.result-box {
+    background: #151515;
+    padding: 15px;
+    border-radius: 12px;
+    color: #b4f5ff;
+    white-space: pre-wrap;
+    border: 1px solid #00ffc3;
+}
+
+/* ===== MAPA ===== */
+#map {
+    width: 100%;
+    height: 420px;
+    border-radius: 15px;
+    margin-top: 25px;
+    box-shadow: 0 0 15px #000;
+}
